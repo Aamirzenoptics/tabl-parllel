@@ -3,6 +3,6 @@
     "cypress": "^12.2.0"
   },
   "scripts":{
-    "cypress-dashboard-parallel": "npx cypress run --record --key bdd7d182-b4cc-422a-8e9a-b26f7c1c36ed --spec cypress/e2e/*.js --browser chrome"
+    "cypress-dashboard-parallel": "npx cypress run --record --key bdd7d182-b4cc-422a-8e9a-b26f7c1c36ed --parallel --spec cypress/e2e/*.js --browser chrome"
   }
 }
