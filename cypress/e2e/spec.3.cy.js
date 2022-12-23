@@ -1,4 +1,4 @@
-Cypress._.times(7, ()=>{
+Cypress._.times(3, ()=>{
 
 
   describe('empty spec', () => {
@@ -52,6 +52,40 @@ Cypress._.times(7, ()=>{
      cy.wait(5000)
      cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/OEMPSEs?:iid=7')
      cy.wait(5000)
+     cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/VC?:iid=4')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/TeamChurn?:iid=1')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/AM?:iid=2')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/ESAM?:iid=4')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/CSM?:iid=5')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/CAPSAM?:iid=1')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/EliteTAMs?:iid=6')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/OEMPSEs?:iid=7')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/VC?:iid=4')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/TeamChurn?:iid=1')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/AM?:iid=2')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/ESAM?:iid=4')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/CSM?:iid=5')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/CAPSAM?:iid=1')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/EliteTAMs?:iid=6')
+       cy.wait(5000)
+       cy.visit('http://tableau-2021.zenoptics.com/#/site/TestSite1/views/AccountManagement/OEMPSEs?:iid=7')
+       cy.wait(5000)
+    
+    
   
   
   
