@@ -1,4 +1,4 @@
-Cypress._.times(5, ()=>{
+Cypress._.times(7, ()=>{
 
 
   describe('empty spec', () => {
