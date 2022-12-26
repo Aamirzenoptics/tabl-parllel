@@ -13,6 +13,6 @@ module.exports = defineConfig({
     "runMode": 3,
     // Configure retry attempts for `cypress open`
     // Default is 0
-    "openMode": 3
+    "openMode": 0
   }
 });
