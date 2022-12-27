@@ -1,0 +1,21 @@
+{
+  "url": {
+    "tableau2021": "http://tableau-2021.zenoptics.com/#/signin"
+  },
+  "credentials": {
+    "username": "hruser",
+    "password": "password1234"
+  },
+  "testSite": {
+    "Name": "Test Site1"
+  },
+  "project": {
+    "Name": "test01102020"
+  },
+  "workbook": {
+    "Name": "testRun"
+  },
+  "NumberofViews": {
+    "Number": ""
+  }
+}

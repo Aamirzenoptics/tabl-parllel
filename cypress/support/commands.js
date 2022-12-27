@@ -78,3 +78,29 @@ if ($project.text() === `${projectName}`) {                                 // p
     }
   );
 })
+
+////reports
+
+Cypress.Commands.add('openReports',()=>{
+  cy.get('[data-tb-test-id="name-cell"]>div>span>a').then((reportcount) => {
+    if (reportcount.length > 7) {
+      cy.get('[data-tb-test-id="tb-list-view"]>div>:nth-child(2)')
+      .scrollTo("center");
+      cy.wait(2500);
+    } else {
+      const links = [];
+      cy.get('[data-tb-test-id="name-cell"]>div>span>a').each(($el) => {
+        cy.wrap($el)
+          .invoke("attr", "href")
+          .then((href) => {
+            links.push(href);
+          });
+      });
+      cy.wrap(links).each((link) => {
+        cy.visit(link);
+        cy.wait(5000);
+      });
+    }
+  });
+
+})
