@@ -1,8 +1,14 @@
 {
   "devDependencies": {
-    "cypress": "^12.2.0"
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^12.6.0",
+    "cypress-iframe": "^1.0.1",
+    "faker": "^6.6.6"
   },
-  "scripts":{
+  "scripts": {
     "cypress-dashboard-parallel": "npx cypress run --record --key bdd7d182-b4cc-422a-8e9a-b26f7c1c36ed --parallel --spec cypress/e2e/*.js --browser chrome"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.10.3"
   }
 }

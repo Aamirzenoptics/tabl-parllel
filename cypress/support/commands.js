@@ -46,6 +46,12 @@ Cypress.Commands.add('goToExplore',()=>{
     cy.url().should("include", "/explore");
 })
 
+Cypress.Commands.add('projectNamesimple',(projectName)=>{
+  
+  cy.get('[data-tb-test-id="name-cell"]>div>span>a').contains(projectName)
+  .click()
+  })
+
 //select & provide name of the project
 Cypress.Commands.add('projectName',(projectName)=>{
 cy.get('[data-tb-test-id="tb-list-view"]>div>:nth-child(2)')
@@ -103,4 +109,13 @@ Cypress.Commands.add('openReports',()=>{
     }
   });
 
+})
+import "cypress-iframe"
+
+Cypress.Commands.add('iframe',(iframe)=>{
+  return cy
+  .get(iframe)
+  .its('0.contentDocument.body')
+  .should('be.visible')
+  .then(cy.wrap)
 })

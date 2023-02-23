@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  
   projectId: "iahqbg",
   e2e: {
     setupNodeEvents(on, config) {
@@ -14,5 +15,19 @@ module.exports = defineConfig({
     // Configure retry attempts for `cypress open`
     // Default is 0
     "openMode": 0
-  }
+  },
+  //defaultCommandTimeout: 100000,
+
+  defaultCommandTimeout: 70000,
+  
+
+  viewportWidth: 1366,
+  viewportHeight: 768,
+
+
+
+
+
+
+
 });

@@ -3,7 +3,7 @@
     "tableau2021": "http://tableau-2021.zenoptics.com/#/signin"
   },
   "credentials": {
-    "username": "hruser",
+    "username": "admin",
     "password": "password1234"
   },
   "testSite": {
