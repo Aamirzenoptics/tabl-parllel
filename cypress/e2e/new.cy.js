@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 import { faker } from '@faker-js/faker'
-const contentUrl = faker.system.commonFileType();
-    const siteName = faker.company.companySuffix();
+const contentUrl = faker.company.catchPhraseNoun()();
+    const siteName = faker.company.catchPhraseNoun()();
     const projectName = faker.company.name()
     const workbookName = faker.system.fileExt()
     const reportName = faker.system.fileName()
