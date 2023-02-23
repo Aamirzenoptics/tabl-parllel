@@ -99,34 +99,63 @@ describe("login", () => {
     cy.loginToTableau(data.credentials.username, data.credentials.password); //Credentials.
     //cy.selectSite(data.testSite.Name)
     cy.wait(1000)
-cy.visit('http://tableau-2021.zenoptics.com/t/application/authoring/NextQuarterProjection/soul_bypass_manager_xns#5')
+cy.visit('http://tableau-2021.zenoptics.com/#/site/application/workbooks/2550/views')
+
+
+cy.window().then(win => {
+    cy.stub(win, 'open').callsFake((url, target) => {
+      return win.open.wrappedMethod.call(win, url, '_self')
+    }).as('open')
+  })
+
+  
+
+  
+  cy.get('.SpaceContainer_space-container_fuoy1tr>div div.ContentExplorer_toolbar-button-group_fmb5dhl>button').eq(0).click()
+  
+
+
+cy.get('@open')
 
 
 
 
 
 
-// for (let i = 0; i < 20; i++) {
+
+
+
+
+
+
+
+
+
+// for (let i = 0; i < 100; i++) {
 //     cy.get('.tabAuthTabNavTabContainer > span').eq(0).rightclick()
 //     cy.get('.tabMenuContent>:nth-child(5)').click() /// create duplicate report
-//     cy.wait(2000)
+//     //cy.wait(2000)
 //   }
 
-
-
 cy.get('.tabAuthTabNavTabContainer > span').then(tabs => {
-  const numTabs = tabs.length;
-  for (let i = 0; i < numTabs; i++) {
-    cy.get('.tabAuthTabNavTabContainer > span').eq(i).click();
-    cy.wait(1000)
-    cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
-      .should('be.visible')
-      .find('input')
-      .dblclick({ force: true })
-      .type(faker.company.catchPhraseNoun(), { delay: 200 });
-    cy.get('body').click();
-  }
-});
+    const numTabs = tabs.length;
+    for (let i = 0; i < numTabs; i++) {
+      cy.get('.tabAuthTabNavTabContainer > span').eq(i)
+      .click();
+      cy.wait(2000)
+      cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
+        .should('be.visible')
+        cy.wait(2000)
+        cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
+        .find('input')
+        .dblclick({ force: true })
+        .blur()
+        .type(faker.company.catchPhraseNoun(),);
+      cy.get('body').click();
+    }
+})
+
+
 
       cy.get('.fqcm03j').click()
     

@@ -6,42 +6,6 @@ const contentUrl = faker.system.commonFileType();
     const workbookName = faker.system.fileExt()
     const reportName = faker.commerce.product()
     import data from "../fixtures/tableauviews.json";
-    const words = [
-        "analysis",
-        "assessment",
-        "benchmark",
-        "budget",
-        "evaluation",
-        "forecast",
-        "impact",
-        "insight",
-        "measurement",
-        "overview",
-        "performance",
-        "strategy",
-        "trend",
-        "report",
-        "scorecard",
-        "dashboard",
-        "summary",
-        "progress",
-        "tracking",
-        "metrics"
-      ];
-      
-      function generateWord() {
-        const wordLength = Math.floor(Math.random() * 2) + 10; // Generates words between 6-7 characters in length
-        const randomIndex = Math.floor(Math.random() * words.length);
-        const randomWord = words[randomIndex];
-      
-        if (randomWord.length < wordLength) {
-          return generateWord(); // Regenerate the word if it's shorter than the required length
-        }
-      
-        return randomWord.substring(0, wordLength);
-      }
-      
-      
     
     faker.seed(Date.now());
 describe("login", () => {
@@ -138,9 +102,6 @@ describe("login", () => {
 cy.visit('http://tableau-2021.zenoptics.com/#/site/application/workbooks/2548/views')
 
 
-
-
-
 cy.window().then(win => {
     cy.stub(win, 'open').callsFake((url, target) => {
       return win.open.wrappedMethod.call(win, url, '_self')
@@ -148,9 +109,25 @@ cy.window().then(win => {
   })
 
   
+
+  
   cy.get('.SpaceContainer_space-container_fuoy1tr>div div.ContentExplorer_toolbar-button-group_fmb5dhl>button').eq(0).click()
   
+
+
 cy.get('@open')
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -159,28 +136,28 @@ cy.get('@open')
 //     cy.get('.tabMenuContent>:nth-child(5)').click() /// create duplicate report
 //     //cy.wait(2000)
 //   }
-
-
-
 cy.get('.tabAuthTabNavTabContainer > span').then(tabs => {
-  const numTabs = tabs.length;
-  for (let i = 0; i < numTabs; i++) {
-    cy.get('.tabAuthTabNavTabContainer > span').eq(i)
-    .click();
-    cy.wait(2000)
-    cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
-      .should('be.visible')
+    const numTabs = tabs.length;
+    for (let i = 0; i < numTabs; i++) {
+      cy.get('.tabAuthTabNavTabContainer > span').eq(i)
+      .click();
       cy.wait(2000)
       cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
-      .find('input')
-      .dblclick({ force: true })
-      .blur()
-      .type(generateWord());
-    cy.get('body').click();
-  }
-});
+        .should('be.visible')
+        cy.wait(2000)
+        cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
+        .find('input')
+        .dblclick({ force: true })
+        .blur()
+        .type(faker.commerce.productName(),);
+      cy.get('body').click();
+    }
+})
 
-     // cy.get('.fqcm03j').click()
+
+
+
+      cy.get('.fqcm03j').click()
     
 })
 

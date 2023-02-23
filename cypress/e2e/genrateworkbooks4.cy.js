@@ -99,7 +99,7 @@ describe("login", () => {
     cy.loginToTableau(data.credentials.username, data.credentials.password); //Credentials.
     //cy.selectSite(data.testSite.Name)
     cy.wait(1000)
-cy.visit('http://tableau-2021.zenoptics.com/#/site/application/workbooks/2553/views')
+cy.visit('http://tableau-2021.zenoptics.com/#/site/application/workbooks/2551/views')
 
 
 cy.window().then(win => {
@@ -136,7 +136,6 @@ cy.get('@open')
 //     cy.get('.tabMenuContent>:nth-child(5)').click() /// create duplicate report
 //     //cy.wait(2000)
 //   }
-
   cy.get('.tabAuthTabNavTabContainer > span').then(tabs => {
     const numTabs = tabs.length;
     for (let i = 0; i < numTabs; i++) {
@@ -150,11 +149,13 @@ cy.get('@open')
         .find('input')
         .dblclick({ force: true })
         .blur()
-        .type(faker.address.city(),);
+        .type(faker.company.companySuffix(),);
       cy.get('body').click();
     }
  
   })
+
+
 
 
       cy.get('.fqcm03j').click()

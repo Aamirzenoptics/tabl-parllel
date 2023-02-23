@@ -99,10 +99,7 @@ describe("login", () => {
     cy.loginToTableau(data.credentials.username, data.credentials.password); //Credentials.
     //cy.selectSite(data.testSite.Name)
     cy.wait(1000)
-cy.visit('http://tableau-2021.zenoptics.com/#/site/application/workbooks/2546/views')
-
-
-
+cy.visit('http://tableau-2021.zenoptics.com/#/site/application/workbooks/2549/views')
 
 
 cy.window().then(win => {
@@ -134,33 +131,34 @@ cy.get('@open')
 
 
 
-for (let i = 0; i < 100; i++) {
-    cy.get('.tabAuthTabNavTabContainer > span').eq(0).rightclick()
-    cy.get('.tabMenuContent>:nth-child(5)').click() /// create duplicate report
-    //cy.wait(2000)
-  }
+// for (let i = 0; i < 100; i++) {
+//     cy.get('.tabAuthTabNavTabContainer > span').eq(0).rightclick()
+//     cy.get('.tabMenuContent>:nth-child(5)').click() /// create duplicate report
+//     //cy.wait(2000)
+//   }
 
-
-
-cy.get('.tabAuthTabNavTabContainer > span').then(tabs => {
-  const numTabs = tabs.length;
-  for (let i = 0; i < numTabs; i++) {
-    cy.get('.tabAuthTabNavTabContainer > span').eq(i)
-    .click();
-    cy.wait(2000)
-    cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
-      .should('be.visible')
+  cy.get('.tabAuthTabNavTabContainer > span').then(tabs => {
+    const numTabs = tabs.length;
+    for (let i = 0; i < numTabs; i++) {
+      cy.get('.tabAuthTabNavTabContainer > span').eq(i)
+      .click();
       cy.wait(2000)
       cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
-      .find('input')
-      .dblclick({ force: true })
-      .blur()
-      .type(faker.address.city(),);
-    cy.get('body').click();
-  }
-});
+        .should('be.visible')
+        cy.wait(2000)
+        cy.get('[class="tabAuthTab tab-widget tabAuthTabChecked tabWorksheet"]')
+        .find('input')
+        .dblclick({ force: true })
+        .blur()
+        .type(faker.company.bsNoun(),);
+      cy.get('body').click();
+    }
+ 
+  })
 
-     // cy.get('.fqcm03j').click()
+
+
+      cy.get('.fqcm03j').click()
     
 })
 
