@@ -3,6 +3,16 @@ name: tab
 on: [push]
 
 jobs:
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v2
+      - name: 🔎 Check IP
+        run: curl https://api.ipify.org
+
+
   test:
     name: Cypress Cloud Tests
     runs-on: ubuntu-20.04
