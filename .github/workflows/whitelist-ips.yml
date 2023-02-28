@@ -3,15 +3,15 @@ name: Whitelist IP Addresses
 on: [push]
 
 jobs:
-  get_ips:
+  build:
     runs-on: ubuntu-latest
-    outputs:
-      ipv4: ${{ steps.ip.outputs.ipv4 }}
-      ipv6: ${{ steps.ip.outputs.ipv6 }}
-    steps:
-      - name: Get IP addresses
-        id: ip
-        uses: haythem/public-ip@v1.3
 
-      - name: Output IP addresses
-        run: echo "IPv4: ${{ steps.ip.outputs.ipv4 }}\nIPv6: ${{ steps.ip.outputs.ipv6 }}"
+    steps:
+    - name: Public IP
+      id: ip
+      uses: haythem/public-ip@v1.3
+
+    - name: Print Public IP
+      run: |
+        echo ${{ steps.ip.outputs.ipv4 }}
+        echo ${{ steps.ip.outputs.ipv6 }}

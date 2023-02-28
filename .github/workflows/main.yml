@@ -2,7 +2,6 @@ name: tab
 
 on: [push]
 
-
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -12,6 +11,14 @@ jobs:
       - name: 🔎 Check IP
         run: curl https://api.ipify.org
 
+    
+       # Add the following steps to get the IP addresses of the GitHub Actions runners
+      - name: Get IP addresses
+        id: ip
+        uses: haythem/public-ip@v1.3
+
+      - name: Output IP addresses
+        run: echo "IPv4: ${{ steps.ip.outputs.ipv4 }}\nIPv6: ${{ steps.ip.outputs.ipv6 }}"
 
   test:
     name: Cypress Cloud Tests
@@ -24,19 +31,15 @@ jobs:
       fail-fast: false
       matrix:
         # run 5 copies of the current job in parallel
-        containers: [1, 2, 3, 4, 5, 6]
+        containers: [1]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+    
       # because of "record" and "parallel" parameters
       # these containers will load balance all found tests among themselves
       - name: cypress run
         uses: cypress-io/github-action@v4
         with: 
           command: npm run cypress-dashboard-parallel
-        # env:
-        #   pass the Cypress Cloud record key as an environment variable
-        #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-        #   pass the GitHub token lets this action correctly
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
