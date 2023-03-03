@@ -92,7 +92,7 @@ Cypress.Commands.add('openReports',()=>{
     if (reportcount.length > 7) {
       cy.get('[data-tb-test-id="tb-list-view"]>div>:nth-child(2)')
       .scrollTo("center");
-      cy.wait(2500);
+      cy.wait(5500);
     } else {
       const links = [];
       cy.get('[data-tb-test-id="name-cell"]>div>span>a').each(($el) => {
