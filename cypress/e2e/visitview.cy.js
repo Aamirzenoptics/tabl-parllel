@@ -1,5 +1,5 @@
 import tabsdata from "../fixtures/tableauviews.json";
-import url from "../e2e/totalurls.json";
+import url from "../fixture/urls1.json";
   describe("ff", () => {
     it("ff", () => {
       cy.visit(tabsdata.url.tableau2021);

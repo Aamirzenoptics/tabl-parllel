@@ -6,9 +6,12 @@
     "faker": "^6.6.6"
   },
   "scripts": {
+    "cy:run": "cypress run",
+    "cy:parallel" : "cypress-parallel -s cy:run -t 7 -d  cypress/e2e/ -a '\"--browser electron --headed\"'",
     "cypress-dashboard-parallel": "npx cypress run --record --key bdd7d182-b4cc-422a-8e9a-b26f7c1c36ed --parallel --spec cypress/e2e/*.js --browser chrome"
   },
   "dependencies": {
+    "cypress-parallel": "^0.12.0",
     "cypress-plugin-api": "^2.10.3",
     "extract-urls": "^1.3.2"
   }
